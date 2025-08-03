@@ -8,23 +8,40 @@
     <link rel="icon" href="/image/tree.webp" type="icon title">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="main.css">
-
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo"> <a href="#home">Akhadjon</a></div>
+            <div class="logo">
+                <a href="#home">Akhadjon</a>
+            </div>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">Bosh sahifa</a></li>
-                <li><a href="#about">Men haqimda</a></li>
-                <li><a href="#skills">Ko'nikmalar</a></li>
-                <li><a href="#projects">Loyihalar</a></li>
-                <li><a href="#contact">Aloqa</a></li>
+                <li><a href="#home" id="nav-home">Bosh sahifa</a></li>
+                <li><a href="#about" id="nav-about">Men haqimda</a></li>
+                <li><a href="#skills" id="nav-skills">Ko'nikmalar</a></li>
+                <li><a href="#projects" id="nav-projects">Loyihalar</a></li>
+                <li><a href="#contact" id="nav-contact">Aloqa</a></li>
             </ul>
+
+            <!-- Til tanlash oynasi -->
+            <div class="language-switcher">
+                <select onchange="setLanguage(this.value)" class="language-select">
+                    <option value="uz">UZ</option>
+                    <option value="ru">RU</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
+
+            <div class="language-switcher hidden">
+                <button onclick="setLanguage('uz')" class="active">UZ</button>
+                <button onclick="setLanguage('ru')">RU</button>
+                <button onclick="setLanguage('en')">EN</button>
+            </div>
+
+
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -36,11 +53,13 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1><span style="font-size: 70px;">👋🏽</span>, men <span style="color: #fbbf24;">Dasturchi</span>man</h1>
-            <p>Zamonaviy veb-saytlar va ilovalar yaratuvchi dasturchi. Har bir loyihani mukammallik bilan bajaraman.</p>
+            <h1 id="greeting"><span style="font-size: 70px;">👋🏽</span>, men <span
+                    style="color: #fbbf24;">Dasturchi</span>man</h1>
+            <p id="description">Zamonaviy veb-saytlar va ilovalar yaratuvchi dasturchi. Har bir loyihani mukammallik
+                bilan bajaraman.</p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Loyihalarni ko'rish</a>
-                <a href="#contact" class="btn btn-outline">Bog'lanish</a>
+                <a href="#projects" class="btn btn-primary" id="btn-projects">Loyihalarni ko'rish</a>
+                <a href="#contact" class="btn btn-outline" id="btn-contact">Bog'lanish</a>
             </div>
         </div>
     </section>
@@ -49,32 +68,32 @@
     <section id="about" class="section about">
         <div class="container">
             <div class="section-title">
-                <h2>Men haqimda</h2>
-                <p>Mening hikoyam va tajribam</p>
+                <h2 id="about-title">Men haqimda</h2>
+                <p id="about-subtitle">Mening hikoyam va tajribam</p>
             </div>
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <h3>Tajribali Dasturchi</h3>
-                    <p>Men 1+ yillik tajribaga ega dasturchiman. Veb-dasturlash, mobil ilovalar va zamonaviy
-                        texnologiyalar bilan ishlashni yaxshi bilaman.</p>
-                    <p>Har bir loyihaga kreativ yondashuv bilan qarayman va mijozlarning ehtiyojlarini to'liq
-                        qondirishga harakat qilaman.</p>
+                    <h3 id="about-heading">Tajribali Dasturchi</h3>
+                    <p id="about-p1">Men 1+ yillik tajribaga ega dasturchiman. Veb-dasturlash, mobil ilovalar va
+                        zamonaviy texnologiyalar bilan ishlashni yaxshi bilaman.</p>
+                    <p id="about-p2">Har bir loyihaga kreativ yondashuv bilan qarayman va mijozlarning ehtiyojlarini
+                        to'liq qondirishga harakat qilaman.</p>
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number">10+</div>
-                            <div>Loyihalar</div>
+                            <div id="stat-projects-text">Loyihalar</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">1+</div>
-                            <div>Yil tajriba</div>
+                            <div id="stat-experience-text">Yil tajriba</div>
                         </div>
                     </div>
                 </div>
                 <div class="about-image fade-in">
-                   <img 
-  src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2ZoaWwyYng4ZzQ0OG15ZW1xYzdudzZ5NTF1cW8zaDg1c2pkZ2FxdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SWoSkN6DxTszqIKEqv/giphy.gif" 
-  alt="Portfolio animatsiya" 
-  style="width: 600px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"  class="about-img"/>
+                    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2ZoaWwyYng4ZzQ0OG15ZW1xYzdudzZ5NTF1cW8zaDg1c2pkZ2FxdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SWoSkN6DxTszqIKEqv/giphy.gif"
+                        alt="Portfolio animatsiya"
+                        style="width: 600px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"
+                        class="about-img" />
                 </div>
             </div>
         </div>
@@ -84,13 +103,13 @@
     <section id="skills" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Ko'nikmalarim</h2>
-                <p>Men ishlagan texnologiyalar</p>
+                <h2 id="skills-title">Ko'nikmalarim</h2>
+                <p id="skills-subtitle">Men ishlagan texnologiyalar</p>
             </div>
             <div class="skills-grid">
                 <div class="skill-card fade-in">
                     <div class="skill-icon">🎨</div>
-                    <h3>Frontend</h3>
+                    <h3 id="skill-frontend">Frontend</h3>
                     <div class="skill-item">
                         <span class="skill-name">HTML/CSS</span>
                         <span class="skill-percent">95%</span>
@@ -113,10 +132,9 @@
                         <div class="skill-progress" style="width: 85%"></div>
                     </div>
                 </div>
-
                 <div class="skill-card fade-in">
                     <div class="skill-icon">⚙️</div>
-                    <h3>Backend</h3>
+                    <h3 id="skill-backend">Backend</h3>
                     <div class="skill-item">
                         <span class="skill-name">Node.js</span>
                         <span class="skill-percent">30%</span>
@@ -139,10 +157,9 @@
                         <div class="skill-progress" style="width: 70%"></div>
                     </div>
                 </div>
-
                 <div class="skill-card fade-in">
                     <div class="skill-icon">🛠️</div>
-                    <h3>Vositalar</h3>
+                    <h3 id="skill-tools">Vositalar</h3>
                     <div class="skill-item">
                         <span class="skill-name">Git/GitHub</span>
                         <span class="skill-percent">90%</span>
@@ -173,56 +190,55 @@
     <section id="projects" class="section projects">
         <div class="container">
             <div class="section-title">
-                <h2>Loyihalarim</h2>
-                <p>Mening eng yaxshi ishlarim</p>
+                <h2 id="projects-title">Loyihalarim</h2>
+                <p id="projects-subtitle">Mening eng yaxshi ishlarim</p>
             </div>
             <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="project-image">E-commerce Loyihasi</div>
                     <div class="project-content">
-                        <h3>Kutilmoqda...</h3>
-                        <p>Zamonaviy onlayn do'kon. To'liq funksional va responsive dizayn.</p>
+                        <h3 id="project-ecommerce-title">Kutilmoqda...</h3>
+                        <p id="project-ecommerce-desc">Zamonaviy onlayn do'kon. To'liq funksional va responsive dizayn.
+                        </p>
                         <div class="project-tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="#">Ko'rish</a>
-                            <a href="https://github.com/axadjon18">GitHub</a>
+                            <a href="#" class="project-view-link">Ko'rish</a>
+                            <a href="https://github.com/axadjon18" class="project-github-link">GitHub</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card fade-in">
                     <div class="project-image">Portfolio Sayt</div>
                     <div class="project-content">
-                        <h3>Kutilmoqda...</h3>
-                        <p>Shaxsiy portfolio veb-sayt. Minimalist va zamonaviy dizayn.</p>
+                        <h3 id="project-portfolio-title">Kutilmoqda...</h3>
+                        <p id="project-portfolio-desc">Shaxsiy portfolio veb-sayt. Minimalist va zamonaviy dizayn.</p>
                         <div class="project-tags">
                             <span class="tag">React</span>
                             <span class="tag">CSS</span>
                             <span class="tag">Next.js</span>
                         </div>
                         <div class="project-links">
-                            <a href="#">Ko'rish</a>
-                            <a href="https://github.com/axadjon18">GitHub</a>
+                            <a href="#" class="project-view-link">Ko'rish</a>
+                            <a href="https://github.com/axadjon18" class="project-github-link">GitHub</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card fade-in">
                     <div class="project-image">Mobil Ilova</div>
                     <div class="project-content">
-                        <h3>Kutilmoqda...</h3>
-                        <p>Cross-platform mobil ilova. Foydalanuvchi-do'st interfeys.</p>
+                        <h3 id="project-mobile-title">Kutilmoqda...</h3>
+                        <p id="project-mobile-desc">Cross-platform mobil ilova. Foydalanuvchi-do'st interfeys.</p>
                         <div class="project-tags">
                             <span class="tag">React Native</span>
                             <span class="tag">Firebase</span>
                         </div>
                         <div class="project-links">
-                            <a href="#">Ko'rish</a>
-                            <a href="https://github.com/axadjon18">GitHub</a>
+                            <a href="#" class="project-view-link">Ko'rish</a>
+                            <a href="https://github.com/axadjon18" class="project-github-link">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -234,106 +250,105 @@
     <section id="contact" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Bog'lanish</h2>
-                <p>Loyihangiz haqida gaplashaylik</p>
+                <h2 id="contact-title">Bog'lanish</h2>
+                <p id="contact-subtitle">Loyihangiz haqida gaplashaylik</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info fade-in">
-                    <h3>Aloqa ma'lumotlari</h3>
-
+                    <h3 id="contact-info-title">Aloqa ma'lumotlari</h3>
                     <a class="contact-link" href="mailto:mannonovaxadjon18@gmail.com">
                         <div class="contact-item">
                             <div class="contact-icon">📧</div>
                             <div class="contact-details">
-                                <strong>Email</strong>
+                                <strong id="contact-email-label">Email</strong>
                                 <span>mannonovaxadjon18@gmail.com</span>
                             </div>
                         </div>
                     </a>
-
                     <a class="contact-link" href="tel:+998883330571">
                         <div class="contact-item">
                             <div class="contact-icon">📞</div>
                             <div class="contact-details">
-                                <strong>Telefon</strong>
+                                <strong id="contact-phone-label">Telefon</strong>
                                 <span> +998 88 333 05 71 </span>
                             </div>
                         </div>
                     </a>
-
-    <a class="contact-link" href="https://t.me/akhii_571" target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="contact-item">
-        <div class="contact-icon">
-            <i class="fab fa-telegram-plane"></i>
-        </div>
-        <div class="contact-details">
-            <strong>Telegram</strong>
-            <span>@akhii_571</span>
-        </div>
-    </div>
-</a>
-
+                    <a class="contact-link" href="https://t.me/akhii_571" target="_blank"
+                        style="text-decoration: none; color: inherit;">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fab fa-telegram-plane"></i></div>
+                            <div class="contact-details">
+                                <strong id="contact-telegram-label">Telegram</strong>
+                                <span>@akhii_571</span>
+                            </div>
+                        </div>
+                    </a>
                     <a class="contact-link" href="https://maps.google.com/?q=Farg'ona, O'zbekiston" target="_blank">
                         <div class="contact-item" style="display: flex; align-items: center;">
                             <div class="contact-icon">📍</div>
                             <div class="contact-details">
-                                <strong>Manzil</strong>
-                                <span>Farg'ona, O'zbekiston</span>
+                                <strong id="contact-address-label">Manzil</strong>
+                                <span id="contact-location">Farg'ona, O'zbekiston</span>
                             </div>
                         </div>
                     </a>
-
                     <style>
-  .contact-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 8px;
-    padding: 6px;
-  }
+                        .contact-link {
+                            text-decoration: none;
+                            color: inherit;
+                            display: block;
+                            transition: background-color 0.3s ease, color 0.3s ease;
+                            border-radius: 8px;
+                            padding: 6px;
+                        }
 
-  .contact-link:hover {
-    background-color: #f6f5f5;
-    color: #0077cc;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
+                        .contact-link:hover {
+                            background-color: #f6f5f5;
+                            color: #0077cc;
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                        }
 
-  .contact-link:hover strong {
-    text-decoration: underline;
-  }
+                        .contact-link:hover strong {
+                            text-decoration: underline;
+                        }
 
-  .contact-item {
-    display: flex;
-    align-items: center;
-  }
+                        .contact-item {
+                            display: flex;
+                            align-items: center;
+                        }
 
-  .contact-icon {
-    font-size: 20px;
-    margin-right: 10px;
-  }
+                        .contact-icon {
+                            font-size: 20px;
+                            margin-right: 10px;
+                        }
 
-  .contact-details span {
-    display: block;
-  }
-</style>
+                        .contact-details span {
+                            display: block;
+                        }
+
+                        .language-switcher button.active {
+                            background-color: #fbbf24;
+                            color: white;
+                        }
+                    </style>
                 </div>
-
                 <div class="contact-form fade-in">
                     <form id="contact-form">
                         <div class="form-group">
-                            <label for="name">Ismingiz</label>
+                            <label for="name" id="label-name">Ismingiz</label>
                             <input type="text" id="name" name="name" required />
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email" id="label-email">Email</label>
                             <input type="email" id="email" name="email" required />
                         </div>
                         <div class="form-group">
-                            <label for="message">Xabar</label>
+                            <label for="message" id="label-message">Xabar</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Xabar yuborish</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="btn-submit">Xabar
+                            yuborish</button>
                     </form>
                 </div>
             </div>
@@ -343,10 +358,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <h3> Axadjon Mannonov | Web Developer </h3>
-            <p>Zamonaviy veb-saytlar va ilovalar yaratuvchi</p>
+            <h3 id="footer-title"> Axadjon Mannonov | Web Developer </h3>
+            <p id="footer-subtitle">Zamonaviy veb-saytlar va ilovalar yaratuvchi</p>
             <div class="social-links">
-
                 <a href="https://t.me/akhii_571" target="_blank" aria-label="Telegram">
                     <i class="fab fa-telegram-plane"></i>
                 </a>
@@ -359,10 +373,9 @@
                 <a href="https://linkedin.com/in/axadjon-mannonov-231027328" target="_blank" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Portfolio. Barcha huquqlar himoyalangan.</p>
+                <p id="footer-copy">&copy; 2025 Portfolio. Barcha huquqlar himoyalangan.</p>
             </div>
         </div>
     </footer>
@@ -430,7 +443,7 @@
         // Form submission
         document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Xabaringiz yuborildi! Tez orada javob beraman.');
+            alert(window.currentFormSuccessMessage || 'Xabaringiz yuborildi! Tez orada javob beraman.');
             this.reset();
         });
 
@@ -452,6 +465,7 @@
             skillObserver.observe(bar);
         });
     </script>
+    <script src="lang.js"></script>
 </body>
 
 </html>

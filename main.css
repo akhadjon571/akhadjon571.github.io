@@ -547,6 +547,19 @@ text-size-adjust: none;
     transform: translateY(0);
 }
 
+.language-select {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
