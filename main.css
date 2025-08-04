@@ -550,12 +550,19 @@ padding-top: 14px;
 
 .language-select {
     margin-left: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    background-color: white;
-    cursor: pointer;
+padding: 8px 32px 8px 12px; 
+font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  appearance: none; /* Safari, Chrome, Firefox uchun */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='black' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 10px center;
+  background-color: white;
+  background-size: 13px 8px;
 }
+
+
 
 
 
