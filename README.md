@@ -1,1 +1,2 @@
 Portifolya Mannonov Axadjon
+.
