@@ -141,6 +141,7 @@ text-size-adjust: none;
 }
 
 .btn-primary {
+padding-top: 14px;
     background: #fff;
     color: #2563eb;
 }
@@ -556,9 +557,8 @@ text-size-adjust: none;
     cursor: pointer;
 }
 
-.hidden {
-  display: none !important;
-}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

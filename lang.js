@@ -210,18 +210,21 @@ const translations = {
   },
 }
 
+
+
+
 function setLanguage(lang) {
   localStorage.setItem("language", lang)
   const t = translations[lang]
 
-  // Update active language button
-  document.querySelectorAll(".language-switcher button").forEach((btn) => {
-    btn.classList.remove("active")
-  })
-  document.querySelector(`button[onclick="setLanguage('${lang}')"]`).classList.add("active")
-
   // Update HTML lang attribute
   document.documentElement.lang = lang
+
+  // Update the select element's value
+  const languageSelect = document.querySelector(".language-select")
+  if (languageSelect) {
+    languageSelect.value = lang
+  }
 
   // Hero section
   document.getElementById("greeting").innerHTML = t.greeting
@@ -258,12 +261,12 @@ function setLanguage(lang) {
   document.getElementById("projects-title").textContent = t.projectsTitle
   document.getElementById("projects-subtitle").textContent = t.projectsSubtitle
 
-  // Project cards
-  document.getElementById("project-ecommerce-title").textContent = t.projectItems.ecommerce.status
+  // Project cards - CORRECTED to use title instead of status
+  document.getElementById("project-ecommerce-title").textContent = t.projectItems.ecommerce.title
   document.getElementById("project-ecommerce-desc").textContent = t.projectItems.ecommerce.description
-  document.getElementById("project-portfolio-title").textContent = t.projectItems.portfolio.status
+  document.getElementById("project-portfolio-title").textContent = t.projectItems.portfolio.title
   document.getElementById("project-portfolio-desc").textContent = t.projectItems.portfolio.description
-  document.getElementById("project-mobile-title").textContent = t.projectItems.mobile.status
+  document.getElementById("project-mobile-title").textContent = t.projectItems.mobile.title
   document.getElementById("project-mobile-desc").textContent = t.projectItems.mobile.description
 
   // Project links
